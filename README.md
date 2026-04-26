@@ -13,9 +13,9 @@ The dataset contains two classes:
 
 Directory structure:
 
-data/
-├── real/
-└── fake/
+data
+1.real
+2.fake
 
 ## Models Used
 The following pretrained models (from torchvision) are used:
@@ -69,23 +69,6 @@ The program generates:
 ## Results
 
 ![Final Results](final_table.png)
-
-## Project Structure
-
-deep_fake_detection/
-│
-├── data/
-│   ├── real/
-│   └── fake/
-│
-├── src/
-│   ├── main.py
-│   ├── models.py
-│   ├── evaluate.py
-│
-├── final_table.png
-├── requirements.txt
-└── README.md
 
 ## Conclusion
 Multiple pretrained CNN models were evaluated for deepfake detection. Fine-tuning improved performance, and the ensemble approach provided more reliable predictions compared to individual models.
