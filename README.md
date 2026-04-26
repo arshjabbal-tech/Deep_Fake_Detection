@@ -63,7 +63,7 @@ The program generates:
 
 ## Results
 
-![Final Results]
+
 <img width="1570" height="424" alt="image" src="https://github.com/user-attachments/assets/563b9524-a4dc-497f-83a5-4e7590e5e971" />
 
 
