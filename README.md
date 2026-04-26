@@ -11,11 +11,6 @@ The dataset contains two classes:
 - Real images
 - Fake images
 
-Directory structure:
-
-data
-1.real
-2.fake
 
 ## Models Used
 The following pretrained models (from torchvision) are used:
