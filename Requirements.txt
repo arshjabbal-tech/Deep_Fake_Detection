@@ -1,28 +1,8 @@
-## Requirements
-
-The project was developed using Python 3.10+ and the following libraries:
-
-```
 torch
 torchvision
+numpy
 pandas
 matplotlib
 scikit-learn
 Pillow
-```
-
-You can install all dependencies using:
-
-```
-pip install torch torchvision pandas matplotlib scikit-learn pillow
-```
-
----
-
-
-### System Requirements
-
-* Python 3.10 or higher
-* macOS / Linux / Windows
-* Minimum 4 GB RAM (8 GB recommended)
-* GPU (optional, for faster training)
+tqdm

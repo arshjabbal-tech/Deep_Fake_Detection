@@ -22,12 +22,13 @@ def load_data():
     return X, y
 
 
-# ✅ RUN ALL MODELS
 def run_all_models():
-    X, y = load_data()   # ✅ y is defined here properly
+    X, y = load_data()
 
     results = {}
+    all_predictions = []
 
+    # ✅ models_list MUST be INSIDE this function
     models_list = {
         "M1 (ResNet18)": load_resnet18(),
         "M2 (MobileNet)": load_mobilenet(),
@@ -38,23 +39,31 @@ def run_all_models():
         "M7 (SqueezeNet)": load_squeezenet(),
         "M8 (ShuffleNet)": load_shufflenet(),
         "M9 (ResNet34)": load_resnet34(),
-        "M10 (GoogLeNet)": load_googlenet(),
+        "M10 (GoogleNet)": load_googlenet(),
     }
 
+    # ✅ LOOP ALSO INSIDE SAME FUNCTION
     for name, model in models_list.items():
         print(f"\nRunning {name}...")
 
-        # ✅ train each model
         model = train_model(model, X, y)
 
-        # ✅ predict
         y_pred = []
         for img_path in X:
             pred = predict(model, img_path)
             y_pred.append(pred)
 
-        # ✅ compute metrics
         results[name] = compute_metrics(y, y_pred)
+        all_predictions.append(y_pred)
+
+    # ✅ ENSEMBLE
+    ensemble_pred = []
+    for i in range(len(X)):
+        votes = [preds[i] for preds in all_predictions]
+        final_pred = max(set(votes), key=votes.count)
+        ensemble_pred.append(final_pred)
+
+    results["Ensemble"] = compute_metrics(y, ensemble_pred)
 
     return results
 
